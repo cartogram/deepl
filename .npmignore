@@ -6,6 +6,6 @@ tsconfig.json
 .github
 .changeset
 .vscode
-.env.d.ts
+env.d.ts
 .env
 .env.sample
