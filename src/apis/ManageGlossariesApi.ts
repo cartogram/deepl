@@ -128,12 +128,12 @@ export class ManageGlossariesApi extends runtime.BaseAPI {
     }
 
     const consumes: runtime.Consume[] = [
-      { contentType: 'application/x-www-form-urlencoded' },
+      {contentType: 'application/x-www-form-urlencoded'},
     ]
     // @ts-ignore: canConsumeForm may be unused
     const canConsumeForm = runtime.canConsumeForm(consumes)
 
-    let formParams: { append(param: string, value: any): any }
+    let formParams: {append(param: string, value: any): any}
     let useForm = false
     if (useForm) {
       formParams = new FormData()
@@ -154,7 +154,7 @@ export class ManageGlossariesApi extends runtime.BaseAPI {
               GlossarySourceLanguageToJSON(requestParameters.sourceLang),
             ),
           ],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }
@@ -168,7 +168,7 @@ export class ManageGlossariesApi extends runtime.BaseAPI {
               GlossaryTargetLanguageToJSON(requestParameters.targetLang),
             ),
           ],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }

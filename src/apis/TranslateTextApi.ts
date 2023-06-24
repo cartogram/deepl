@@ -87,12 +87,12 @@ export class TranslateTextApi extends runtime.BaseAPI {
     }
 
     const consumes: runtime.Consume[] = [
-      { contentType: 'application/x-www-form-urlencoded' },
+      {contentType: 'application/x-www-form-urlencoded'},
     ]
     // @ts-ignore: canConsumeForm may be unused
     const canConsumeForm = runtime.canConsumeForm(consumes)
 
-    let formParams: { append(param: string, value: any): any }
+    let formParams: {append(param: string, value: any): any}
     let useForm = false
     if (useForm) {
       formParams = new FormData()
@@ -111,7 +111,7 @@ export class TranslateTextApi extends runtime.BaseAPI {
         'source_lang',
         new Blob(
           [JSON.stringify(SourceLanguageToJSON(requestParameters.sourceLang))],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }
@@ -121,7 +121,7 @@ export class TranslateTextApi extends runtime.BaseAPI {
         'target_lang',
         new Blob(
           [JSON.stringify(TargetLanguageToJSON(requestParameters.targetLang))],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }
@@ -145,7 +145,7 @@ export class TranslateTextApi extends runtime.BaseAPI {
         'formality',
         new Blob(
           [JSON.stringify(FormalityToJSON(requestParameters.formality))],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }

@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime'
-import type { GlossarySourceLanguage } from './GlossarySourceLanguage'
+import {exists, mapValues} from '../runtime'
+import type {GlossarySourceLanguage} from './GlossarySourceLanguage'
 import {
   GlossarySourceLanguageFromJSON,
   GlossarySourceLanguageFromJSONTyped,
   GlossarySourceLanguageToJSON,
 } from './GlossarySourceLanguage'
-import type { GlossaryTargetLanguage } from './GlossaryTargetLanguage'
+import type {GlossaryTargetLanguage} from './GlossaryTargetLanguage'
 import {
   GlossaryTargetLanguageFromJSON,
   GlossaryTargetLanguageFromJSONTyped,

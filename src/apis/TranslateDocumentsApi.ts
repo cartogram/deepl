@@ -247,11 +247,11 @@ export class TranslateDocumentsApi extends runtime.BaseAPI {
         this.configuration.apiKey('Authorization') // auth_header authentication
     }
 
-    const consumes: runtime.Consume[] = [{ contentType: 'multipart/form-data' }]
+    const consumes: runtime.Consume[] = [{contentType: 'multipart/form-data'}]
     // @ts-ignore: canConsumeForm may be unused
     const canConsumeForm = runtime.canConsumeForm(consumes)
 
-    let formParams: { append(param: string, value: any): any }
+    let formParams: {append(param: string, value: any): any}
     let useForm = false
     // use FormData to transmit files using content-type "multipart/form-data"
     useForm = canConsumeForm
@@ -266,7 +266,7 @@ export class TranslateDocumentsApi extends runtime.BaseAPI {
         'source_lang',
         new Blob(
           [JSON.stringify(SourceLanguageToJSON(requestParameters.sourceLang))],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }
@@ -276,7 +276,7 @@ export class TranslateDocumentsApi extends runtime.BaseAPI {
         'target_lang',
         new Blob(
           [JSON.stringify(TargetLanguageToJSON(requestParameters.targetLang))],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }
@@ -294,7 +294,7 @@ export class TranslateDocumentsApi extends runtime.BaseAPI {
         'formality',
         new Blob(
           [JSON.stringify(FormalityToJSON(requestParameters.formality))],
-          { type: 'application/json' },
+          {type: 'application/json'},
         ),
       )
     }

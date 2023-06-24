@@ -12,8 +12,8 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime'
-import type { SourceLanguage } from './SourceLanguage'
+import {exists, mapValues} from '../runtime'
+import type {SourceLanguage} from './SourceLanguage'
 import {
   SourceLanguageFromJSON,
   SourceLanguageFromJSONTyped,

@@ -12,8 +12,8 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime'
-import type { TranslateText200ResponseTranslationsInner } from './TranslateText200ResponseTranslationsInner'
+import {exists, mapValues} from '../runtime'
+import type {TranslateText200ResponseTranslationsInner} from './TranslateText200ResponseTranslationsInner'
 import {
   TranslateText200ResponseTranslationsInnerFromJSON,
   TranslateText200ResponseTranslationsInnerFromJSONTyped,

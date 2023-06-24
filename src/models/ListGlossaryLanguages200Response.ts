@@ -12,8 +12,8 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime'
-import type { ListGlossaryLanguages200ResponseSupportedLanguagesInner } from './ListGlossaryLanguages200ResponseSupportedLanguagesInner'
+import {exists, mapValues} from '../runtime'
+import type {ListGlossaryLanguages200ResponseSupportedLanguagesInner} from './ListGlossaryLanguages200ResponseSupportedLanguagesInner'
 import {
   ListGlossaryLanguages200ResponseSupportedLanguagesInnerFromJSON,
   ListGlossaryLanguages200ResponseSupportedLanguagesInnerFromJSONTyped,

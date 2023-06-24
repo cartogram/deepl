@@ -12,8 +12,8 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime'
-import type { Glossary } from './Glossary'
+import {exists, mapValues} from '../runtime'
+import type {Glossary} from './Glossary'
 import {
   GlossaryFromJSON,
   GlossaryFromJSONTyped,

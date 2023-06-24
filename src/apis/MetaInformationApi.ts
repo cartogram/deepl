@@ -13,10 +13,7 @@
  */
 
 import * as runtime from '../runtime'
-import type {
-  GetLanguages200ResponseInner,
-  GetUsage200Response,
-} from '../models'
+import type {GetLanguages200ResponseInner, GetUsage200Response} from '../models'
 import {
   GetLanguages200ResponseInnerFromJSON,
   GetLanguages200ResponseInnerToJSON,

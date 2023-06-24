@@ -118,7 +118,7 @@ export class BaseAPI {
     this: T,
     ...preMiddlewares: Array<Middleware['pre']>
   ) {
-    const middlewares = preMiddlewares.map((pre) => ({ pre }))
+    const middlewares = preMiddlewares.map((pre) => ({pre}))
     return this.withMiddleware<T>(...middlewares)
   }
 
@@ -126,7 +126,7 @@ export class BaseAPI {
     this: T,
     ...postMiddlewares: Array<Middleware['post']>
   ) {
-    const middlewares = postMiddlewares.map((post) => ({ post }))
+    const middlewares = postMiddlewares.map((post) => ({post}))
     return this.withMiddleware<T>(...middlewares)
   }
 
@@ -151,7 +151,7 @@ export class BaseAPI {
     context: RequestOpts,
     initOverrides?: RequestInit | InitOverrideFunction,
   ): Promise<Response> {
-    const { url, init } = await this.createFetchParams(context, initOverrides)
+    const {url, init} = await this.createFetchParams(context, initOverrides)
     const response = await this.fetchApi(url, init)
     if (response && response.status >= 200 && response.status < 300) {
       return response
@@ -213,11 +213,11 @@ export class BaseAPI {
           : JSON.stringify(overriddenInit.body),
     }
 
-    return { url, init }
+    return {url, init}
   }
 
   private fetchApi = async (url: string, init: RequestInit) => {
-    let fetchParams = { url, init }
+    let fetchParams = {url, init}
     for (const middleware of this.middleware) {
       if (middleware.pre) {
         fetchParams =
@@ -330,7 +330,7 @@ export type HTTPMethod =
   | 'DELETE'
   | 'OPTIONS'
   | 'HEAD'
-export type HTTPHeaders = { [key: string]: string }
+export type HTTPHeaders = {[key: string]: string}
 export type HTTPQuery = {
   [key: string]:
     | string
@@ -421,7 +421,7 @@ function querystringSingleKey(
 
 export function mapValues(data: any, fn: (item: any) => any) {
   return Object.keys(data).reduce(
-    (acc, key) => ({ ...acc, [key]: fn(data[key]) }),
+    (acc, key) => ({...acc, [key]: fn(data[key])}),
     {},
   )
 }
