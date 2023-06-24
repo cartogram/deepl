@@ -22,3 +22,5 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm run ci
+        env:
+          VITE_DEEPL_AUTH_KEY: ${{ secrets.VITE_DEEPL_AUTH_KEY }}
