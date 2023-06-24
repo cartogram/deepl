@@ -1,7 +1,7 @@
 {
   "name": "@cartogram/deepl",
   "version": "0.0.2",
-  "description": "DeepL API client for the browser and Node",
+  "description": "DeepL API client for the browser and Node.",
   "publishConfig": {
     "access": "public"
   },
@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cartogram/deepl-js"
+    "url": "https://github.com/cartogram/deepl"
   },
   "files": [
     "dist"
