@@ -36,6 +36,7 @@
     "bracketSpacing": false
   },
   "dependencies": {
+    "@changesets/cli": "^2.26.1",
     "axios": "^1.4.0"
   }
 }
