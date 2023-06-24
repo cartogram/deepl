@@ -1,6 +1,6 @@
 {
   "name": "@cartogram/deepl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "DeepL API client for the browser and Node",
   "publishConfig": {
     "access": "public"
