@@ -1,5 +1,3 @@
-/* tslint:disable */
-/* eslint-disable */
 export * from './DocumentTranslationError'
 export * from './GetDocumentStatus200Response'
 export * from './GetLanguages200ResponseInner'

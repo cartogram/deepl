@@ -13,26 +13,13 @@
  */
 
 import * as runtime from '../runtime'
-import type {
-  Formality,
-  SourceLanguage,
-  TargetLanguage,
-  TranslateText200Response,
-} from '../models'
-import {
-  FormalityFromJSON,
-  FormalityToJSON,
-  SourceLanguageFromJSON,
-  SourceLanguageToJSON,
-  TargetLanguageFromJSON,
-  TargetLanguageToJSON,
-  TranslateText200ResponseFromJSON,
-  TranslateText200ResponseToJSON,
-} from '../models'
+import {Formality, TargetLanguageCode} from '../types'
+import type {SourceLanguage, TranslateText200Response} from '../models'
+import {SourceLanguageToJSON, TranslateText200ResponseFromJSON} from '../models'
 
 export interface TranslateTextRequest {
   text: Array<string>
-  targetLang: TargetLanguage
+  targetLang: TargetLanguageCode
   sourceLang?: SourceLanguage
   splitSentences?: TranslateTextSplitSentencesEnum
   preserveFormatting?: TranslateTextPreserveFormattingEnum
@@ -119,10 +106,9 @@ export class TranslateTextApi extends runtime.BaseAPI {
     if (requestParameters.targetLang !== undefined) {
       formParams.append(
         'target_lang',
-        new Blob(
-          [JSON.stringify(TargetLanguageToJSON(requestParameters.targetLang))],
-          {type: 'application/json'},
-        ),
+        new Blob([JSON.stringify(requestParameters.targetLang)], {
+          type: 'application/json',
+        }),
       )
     }
 
@@ -143,10 +129,9 @@ export class TranslateTextApi extends runtime.BaseAPI {
     if (requestParameters.formality !== undefined) {
       formParams.append(
         'formality',
-        new Blob(
-          [JSON.stringify(FormalityToJSON(requestParameters.formality))],
-          {type: 'application/json'},
-        ),
+        new Blob([JSON.stringify(requestParameters.formality)], {
+          type: 'application/json',
+        }),
       )
     }
 
