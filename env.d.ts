@@ -1,5 +1,5 @@
 interface ImportMetaEnv {
-  readonly DEEPL_AUTH_KEY: string
+  readonly VITE_DEEPL_AUTH_KEY: string
 }
 
 interface ImportMeta {

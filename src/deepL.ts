@@ -38,8 +38,8 @@ export class DeepL {
       })
 
       return response.data
-    } catch (error) {
-      console.error('Error:', error)
+    } catch (error: unknown) {
+      console.error('Error:', (error as Error).message)
     }
   }
 }

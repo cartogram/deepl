@@ -2,7 +2,7 @@ import {describe, expect, it} from 'vitest'
 import {DeepL} from '../deepL'
 
 const config = {
-  authKey: import.meta.env.DEEPL_AUTH_KEY as string,
+  authKey: import.meta.env.VITE_DEEPL_AUTH_KEY,
 }
 
 describe('DeepL', () => {
