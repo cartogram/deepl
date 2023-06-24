@@ -1,7 +1,10 @@
 {
-  "name": "deepl-js",
+  "name": "@cartogram/deepl-js",
   "version": "0.0.1",
   "description": "DeepL API client for the browser and Node",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "module": "./dist/index.mjs",

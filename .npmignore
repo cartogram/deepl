@@ -5,3 +5,7 @@ tsconfig.json
 .gitignore
 .github
 .changeset
+.vscode
+.env.d.ts
+.env
+.env.sample
