@@ -1,4 +1,5 @@
-import axios from 'axios'
+import {DeepLError} from './errors'
+import {isFreeAccountAuthKey, isString} from './utils'
 
 interface Config {
   authKey: string
@@ -13,7 +14,15 @@ export class DeepL {
   private apiUrl: string
 
   constructor(private config: Config) {
-    this.apiUrl = 'https://api-free.deepl.com/v2/translate'
+    if (!isString(config.authKey) || config.authKey.length === 0) {
+      throw new DeepLError('authKey must be a non-empty string')
+    }
+
+    const baseUrl = isFreeAccountAuthKey(config.authKey)
+      ? 'https://api-free.deepl.com'
+      : 'https://api.deepl.com'
+
+    this.apiUrl = `${baseUrl}/v2/translate`
   }
 
   async translate(
@@ -30,14 +39,24 @@ export class DeepL {
       formality: formality,
     }
 
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `DeepL-Auth-Key ${this.config.authKey}`,
+      },
+      body: JSON.stringify(requestData),
+    }
+
     try {
-      const response = await axios.post(this.apiUrl, requestData, {
-        headers: {
-          Authorization: `DeepL-Auth-Key ${this.config.authKey}`,
-        },
+      const data = await fetch(this.apiUrl, requestOptions).then((response) => {
+        if (!response.ok) {
+          throw new DeepLError(`Status: ${response.status}`)
+        }
+        return response.json()
       })
 
-      return response.data
+      return data
     } catch (error: unknown) {
       console.error('Error:', (error as Error).message)
     }
