@@ -1,5 +1,6 @@
 import {DeepLError} from './errors'
 import {isFreeAccountAuthKey, isString} from './utils'
+import {Logger} from './logger'
 
 /**
  * Configuration interface for DeepL client.
@@ -24,7 +25,7 @@ export class DeepL {
    * @param {Config} config - Configuration options for the client.
    * @throws {DeepLError} Throws an error if the provided authKey is invalid.
    */
-  constructor(private config: Config) {
+  constructor(private config: Config, private logger: Logger = new Logger()) {
     if (!isString(config.authKey) || config.authKey.length === 0) {
       throw new DeepLError('authKey must be a non-empty string')
     }
@@ -76,7 +77,7 @@ export class DeepL {
 
       return data
     } catch (error: unknown) {
-      console.error('Error:', (error as Error).message)
+      this.logger.error('Error:', (error as Error).message)
     }
   }
 }
