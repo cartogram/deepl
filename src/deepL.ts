@@ -1,10 +1,16 @@
 import {DeepLError} from './errors'
 import {isFreeAccountAuthKey, isString} from './utils'
 
+/**
+ * Configuration interface for DeepL client.
+ */
 interface Config {
   authKey: string
 }
 
+/**
+ * Options interface for the translate method.
+ */
 interface TranslateOptions {
   formality?: 'default' | 'less' | 'more'
   sourceLang?: string
@@ -13,6 +19,11 @@ interface TranslateOptions {
 export class DeepL {
   private apiUrl: string
 
+  /**
+   * Constructs a new instance of the DeepL client.
+   * @param {Config} config - Configuration options for the client.
+   * @throws {DeepLError} Throws an error if the provided authKey is invalid.
+   */
   constructor(private config: Config) {
     if (!isString(config.authKey) || config.authKey.length === 0) {
       throw new DeepLError('authKey must be a non-empty string')
@@ -25,6 +36,13 @@ export class DeepL {
     this.apiUrl = `${baseUrl}/v2/translate`
   }
 
+  /**
+   * Translates the given text to the target language.
+   * @param {string | string[]} text - The text or array of texts to be translated.
+   * @param {string} targetLang - The target language code.
+   * @param {TranslateOptions} [options={}] - Additional translation options.
+   * @returns {Promise<any>} A promise that resolves to the translated data.
+   */
   async translate(
     text: string | string[],
     targetLang: string,
