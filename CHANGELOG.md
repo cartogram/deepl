@@ -1,5 +1,11 @@
 # @cartogram/deepl
 
+## 0.0.4
+
+### Patch Changes
+
+- ab217fc: Fix ESM bundle by removing a space in the cli command
+
 ## 0.0.3
 
 ### Patch Changes
