@@ -1,6 +1,6 @@
 # @cartogram/deepl
 
-> DeepL API client for the browser and Node.
+> DeepL API client for JavaScript.
 
 This module provides a simple javascript client for translating text with DeepL. You will need a developer account and Authentication key from DeepL in order to use this library. To get a key, please create an account on [Deepl.com](https://www.deepl.com/pro/change-plan?utm_source=github&utm_medium=github-cartogram#developer).
 
